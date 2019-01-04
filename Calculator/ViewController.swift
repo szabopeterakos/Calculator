@@ -99,6 +99,8 @@ class ViewController: UIViewController {
     func initZero(_ sender: UIButton){
         if(numMonitor.text=="0"){
             numMonitor.text = ""
+        }else if(numMonitor.text=="-0"){
+            numMonitor.text = "-"
         }
     }
     
