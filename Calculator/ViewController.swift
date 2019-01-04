@@ -34,17 +34,15 @@ class ViewController: UIViewController {
     
     @IBAction func numbers(_ sender: UIButton) {
         responsiveDisplay()
+        
         if (numMonitor.text?.count)! >= 10 {
             return
         }
         
-        if(numMonitor.text=="0"){
-            numMonitor.text = ""
-        }
-        let current = numMonitor.text! + String(sender.tag-1)
-        print(current)
-        numMonitor.text = current
+        initZero(sender)
         
+        let current = numMonitor.text! + String(sender.tag-1)
+        numMonitor.text = current
     }
     
     //MARK: LOGIC
@@ -87,14 +85,20 @@ class ViewController: UIViewController {
     }
     
     func responsiveDisplay(){
-        var currentFont = numMonitor.font
+        let currentFont = numMonitor.font
         
         if(numMonitor.text?.count)! >= 8 {
-            currentFont = currentFont!.withSize(58)
+            numMonitor.font = currentFont!.withSize(58)
         }else if(numMonitor.text?.count)! >= 6 {
-            currentFont = currentFont!.withSize(80)
+            numMonitor.font = currentFont!.withSize(80)
         }else{
-            currentFont = currentFont!.withSize(100)
+            numMonitor.font = currentFont!.withSize(100)
+        }
+    }
+    
+    func initZero(_ sender: UIButton){
+        if(numMonitor.text=="0"){
+            numMonitor.text = ""
         }
     }
     
