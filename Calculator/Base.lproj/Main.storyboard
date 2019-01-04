@@ -31,7 +31,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-z7-9NM">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="100"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.3558055768651705" green="0.49416103102306658" blue="0.6753251903553299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -59,9 +59,12 @@
                                                 <rect key="frame" x="94.5" y="0.0" width="92" height="90.5"/>
                                                 <color key="backgroundColor" red="0.0016751767249294158" green="0.061227991809971051" blue="0.36607709390862941" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal">
+                                                <state key="normal" title="+/-">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="negationControl:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HZ5-8T-8ns"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YH-k9-WqG">
                                                 <rect key="frame" x="188.5" y="0.0" width="92.5" height="90.5"/>
@@ -71,13 +74,16 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-cM-TZK">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-cM-TZK">
                                                 <rect key="frame" x="283" y="0.0" width="92" height="90.5"/>
                                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="/">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operators:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="h5P-RK-dhi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -117,13 +123,16 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="GG0-8M-1Ga"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Ac-SJI">
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Ac-SJI">
                                                 <rect key="frame" x="283" y="0.0" width="92" height="91"/>
                                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="x">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operators:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Tob-eN-H8F"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -163,13 +172,16 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ggZ-Sw-FuG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-a4-HtP">
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-a4-HtP">
                                                 <rect key="frame" x="283" y="0.0" width="92" height="90.5"/>
                                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="-">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operators:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="l2Y-Ml-xIA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -209,13 +221,16 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Hvq-90-b8X"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJr-CJ-ZRt">
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJr-CJ-ZRt">
                                                 <rect key="frame" x="283" y="0.0" width="92" height="91"/>
                                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operators:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Wji-cX-3hk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -249,13 +264,16 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6El-kQ-PBY">
+                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6El-kQ-PBY">
                                                 <rect key="frame" x="283" y="0.0" width="92" height="90.5"/>
                                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operators:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="cop-8F-Ejj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -273,6 +291,7 @@
                     </view>
                     <connections>
                         <outlet property="numMonitor" destination="iJh-z7-9NM" id="XzM-g1-Xqx"/>
+                        <outlet property="testDisplayArea" destination="7YH-k9-WqG" id="g0Y-qk-nkD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
