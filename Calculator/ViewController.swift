@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var numMonitor: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        numMonitor.text = ""
     }
-
-
+    
+    @IBAction func numbers(_ sender: UIButton) {
+        let current = numMonitor.text! + String(sender.tag-1)
+        print(current)
+        numMonitor.text = current
+    }
+    
+    @IBAction func resetButton(_ sender: UIButton) {
+        numMonitor.text = ""
+    }
+    
 }
 
