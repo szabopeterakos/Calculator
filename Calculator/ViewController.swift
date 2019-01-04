@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     
     //MARK: PROPERTIES
     enum OPERATOR: String{
-        case addition = "+" // 14
-        case substraction = "-" // 15
-        case divide = "/" // 12
-        case multiple = "x" // 13
-        case equals = "=" // 16
+        case addition = "+" // tag14
+        case substraction = "-" // tag15
+        case divide = "/" // tag12
+        case multiple = "x" // tag13
+        case equals = "=" // tag16
     }
     @IBOutlet weak var numMonitor: UILabel!
     var currentOperator: OPERATOR!
