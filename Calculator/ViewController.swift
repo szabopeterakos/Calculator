@@ -32,16 +32,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    //MARK: LOGIC
     @IBAction func numbers(_ sender: UIButton) {
+        responsiveDisplay()
+        if (numMonitor.text?.count)! >= 10 {
+            return
+        }
+        
         if(numMonitor.text=="0"){
             numMonitor.text = ""
         }
         let current = numMonitor.text! + String(sender.tag-1)
         print(current)
         numMonitor.text = current
+        
     }
     
+    //MARK: LOGIC
     @IBAction func operators(_ sender: UIButton) {
         var currentOperator : OPERATOR!
         
@@ -65,6 +71,7 @@ class ViewController: UIViewController {
     
     @IBAction func resetButton(_ sender: UIButton) {
         numMonitor.text = "0"
+        numMonitor.font = numMonitor.font.withSize(100)
     }
     
     @IBAction func negationControl(_ sender: UIButton) {
@@ -79,7 +86,17 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    func responsiveDisplay(){
+        var currentFont = numMonitor.font
+        
+        if(numMonitor.text?.count)! >= 8 {
+            currentFont = currentFont!.withSize(58)
+        }else if(numMonitor.text?.count)! >= 6 {
+            currentFont = currentFont!.withSize(80)
+        }else{
+            currentFont = currentFont!.withSize(100)
+        }
+    }
     
 }
 
