@@ -28,9 +28,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4FH-Rh-b3w">
                                         <rect key="frame" x="0.0" y="92.5" width="375" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-z7-9NM">
-                                                <rect key="frame" x="0.0" y="19" width="375" height="72"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-z7-9NM">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="100"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

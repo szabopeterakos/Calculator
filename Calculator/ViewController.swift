@@ -14,17 +14,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        numMonitor.text = ""
     }
     
     @IBAction func numbers(_ sender: UIButton) {
+        if(numMonitor.text=="0"){
+            numMonitor.text = ""
+        }
         let current = numMonitor.text! + String(sender.tag-1)
         print(current)
         numMonitor.text = current
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
-        numMonitor.text = ""
+        numMonitor.text = "0"
     }
     
 }
