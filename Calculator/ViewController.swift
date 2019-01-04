@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         case addition = "+" // 14
         case substraction = "-" // 15
         case divide = "/" // 12
-        case multiple = "*" // 13
+        case multiple = "x" // 13
         case equals = "=" // 16
     }
     
@@ -78,6 +78,8 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
     
 }
 
