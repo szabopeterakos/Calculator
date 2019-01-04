@@ -18,14 +18,14 @@ class ViewController: UIViewController {
         case multiple = "x" // 13
         case equals = "=" // 16
     }
-    
     @IBOutlet weak var numMonitor: UILabel!
-    
     var currentOperator: OPERATOR!
-    
     @IBOutlet weak var testDisplayArea: UIButton!
-    
+    @IBOutlet weak var previousNumberDisplay: UILabel!
     var isNegate: Bool = false
+    var previousValue: String = "0"
+    var previousOperation: OPERATOR!
+    var inOperation = false
     
     //MARK: INIT
     override func viewDidLoad() {
@@ -60,16 +60,52 @@ class ViewController: UIViewController {
             currentOperator = OPERATOR.addition
         case 16:
             currentOperator = OPERATOR.equals
+            doOperate()
+            responsiveDisplay()
+            return
         default:
             print("something goes wrong")
         }
         
+        previousValue = numMonitor.text!
+        previousNumberDisplay.text = previousValue
+        previousOperation = currentOperator
+        numMonitor.text = ""
         testDisplayArea.setTitle(currentOperator.rawValue, for: .normal)
+        inOperation = true
+        
+    }
+    
+    func doOperate(){
+        previousNumberDisplay.text = ""
+        var sum = 0.0
+        
+        if previousOperation.rawValue.hasPrefix("+"){
+            sum = Double(previousValue)! + Double(numMonitor.text!)!
+        }else if previousOperation.rawValue.hasPrefix("-"){
+            sum = Double(previousValue)! - Double(numMonitor.text!)!
+        }else if previousOperation.rawValue.hasPrefix("x"){
+            sum = Double(previousValue)! * Double(numMonitor.text!)!
+        }else if previousOperation.rawValue.hasPrefix("/"){
+            sum = Double(previousValue)! / Double(numMonitor.text!)!
+        }
+        
+        // check is nice integer
+        if (sum.isNaN || sum.isInfinite) {
+            numMonitor.text = "it's a tricky one"
+        }else if floor(sum) == sum {
+            numMonitor.text = String(Int(sum))
+        }else{
+            let num: String = String(sum).count>=10 ? String(String(sum).prefix(10)) : String(sum)
+            numMonitor.text = num
+        }
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
         numMonitor.text = "0"
         numMonitor.font = numMonitor.font.withSize(100)
+        testDisplayArea.setTitle("", for: .normal)
+        previousNumberDisplay.text = ""
     }
     
     @IBAction func negationControl(_ sender: UIButton) {
