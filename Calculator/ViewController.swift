@@ -70,6 +70,8 @@ class ViewController: UIViewController {
             currentOperator = OPERATOR.equals
             doOperate()
             responsiveDisplay()
+            sum = 0
+            
             return
         default:
             print("something goes wrong")
@@ -126,6 +128,7 @@ class ViewController: UIViewController {
         numMonitor.font = numMonitor.font.withSize(100)
         testDisplayArea.setTitle("", for: .normal)
         previousNumberDisplay.text = ""
+        previousValue = "0"
         numMonitor.textColor = baseColor
         sum = 0
     }
