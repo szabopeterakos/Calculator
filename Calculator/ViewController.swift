@@ -68,6 +68,13 @@ class ViewController: UIViewController {
             currentOperator = OPERATOR.addition
         case 16:
             currentOperator = OPERATOR.equals
+            if( (numMonitor.text?.hasPrefix("it's a tricky one"))! ||
+                (numMonitor.text?.hasPrefix("too big number"))! ||
+                (previousValue.hasPrefix("it's a tricky one")) ||
+                (previousValue.hasPrefix("too big number"))
+                ){
+                return
+            }
             doOperate()
             responsiveDisplay()
             sum = 0
@@ -113,6 +120,12 @@ class ViewController: UIViewController {
         if (sum.isNaN || sum.isInfinite) {
             numMonitor.text = "it's a tricky one"
         }else if floor(sum) == sum {
+            let sumLength = String(sum).count
+            let maxLength = 14
+            if sumLength >= maxLength {
+                numMonitor.text = "too big number"
+                return
+            }
             numMonitor.text = String(Int(sum))
         }else{
             let num: String = String(sum).count>=10 ? String(String(sum).prefix(10)) : String(sum)
@@ -134,6 +147,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func negationControl(_ sender: UIButton) {
+        if( (numMonitor.text?.hasPrefix("it's a tricky one"))! ||
+            (numMonitor.text?.hasPrefix("too big number"))! ||
+            (previousValue.hasPrefix("it's a tricky one")) ||
+            (previousValue.hasPrefix("too big number"))
+            ){
+            return
+        }
         print(isNegate)
         isNegate = !isNegate
         if isNegate {

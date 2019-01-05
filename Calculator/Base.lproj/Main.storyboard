@@ -38,7 +38,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-z7-9NM">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="100"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="94"/>
                                                 <color key="textColor" red="0.39065510034561157" green="0.545390784740448" blue="0.73525255918502808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
