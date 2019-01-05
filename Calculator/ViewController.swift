@@ -26,10 +26,14 @@ class ViewController: UIViewController {
     var previousValue: String = "0"
     var previousOperation: OPERATOR!
     var inOperation = false
+    var sum = 0.0
+    var baseColor: UIColor = UIColor.init(red: 0.33, green: 0.51, blue: 0.79, alpha: 1)
+    var resultColor: UIColor = UIColor.init(red: 0.14, green: 0.26, blue: 0.47, alpha: 1)
     
     //MARK: INIT
     override func viewDidLoad() {
         super.viewDidLoad()
+        numMonitor.textColor = baseColor
     }
     
     @IBAction func numbers(_ sender: UIButton) {
@@ -47,6 +51,10 @@ class ViewController: UIViewController {
     
     //MARK: LOGIC
     @IBAction func operators(_ sender: UIButton) {
+        if(previousOperation == nil && numMonitor.text == ""){
+            return
+        }
+        
         var currentOperator : OPERATOR!
         
         switch sender.tag {
@@ -76,9 +84,17 @@ class ViewController: UIViewController {
         
     }
     
+    func checkNull(){
+        if(numMonitor.text == ""){
+            numMonitor.text = "0"
+        }
+        if(previousValue == ""){
+            previousValue = "0"
+        }
+    }
+    
     func doOperate(){
-        previousNumberDisplay.text = ""
-        var sum = 0.0
+        checkNull()
         
         if previousOperation.rawValue.hasPrefix("+"){
             sum = Double(previousValue)! + Double(numMonitor.text!)!
@@ -91,6 +107,7 @@ class ViewController: UIViewController {
         }
         
         // check is nice integer
+        numMonitor.textColor = resultColor
         if (sum.isNaN || sum.isInfinite) {
             numMonitor.text = "it's a tricky one"
         }else if floor(sum) == sum {
@@ -99,6 +116,9 @@ class ViewController: UIViewController {
             let num: String = String(sum).count>=10 ? String(String(sum).prefix(10)) : String(sum)
             numMonitor.text = num
         }
+        
+        // post functions
+        previousNumberDisplay.text = ""
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
@@ -106,6 +126,8 @@ class ViewController: UIViewController {
         numMonitor.font = numMonitor.font.withSize(100)
         testDisplayArea.setTitle("", for: .normal)
         previousNumberDisplay.text = ""
+        numMonitor.textColor = baseColor
+        sum = 0
     }
     
     @IBAction func negationControl(_ sender: UIButton) {
